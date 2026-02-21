@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MasjidBiryaniWatch 🍛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, select, button { display: block; margin: 10px 0; padding: 8px; width: 100%; }
+    ul { margin-top: 20px; }
+    li { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>🕌 MasjidBiryaniWatch</h2>
+  <p>Community-reported biryani tracker 😄</p>
+
+  <input id="area" placeholder="Enter Area" />
+  <input id="masjid" placeholder="Enter Masjid Name" />
+  <select id="biryani">
+    <option>Chicken Biryani</option>
+    <option>Beef Biryani</option>
+    <option>Mutton Biryani</option>
+  </select>
+  <button onclick="reportBiryani()">Report</button>
+
+  <h3>Reported List:</h3>
+  <ul id="list"></ul>
+
+  <script>
+    function reportBiryani() {
+      var area = document.getElementById('area').value;
+      var masjid = document.getElementById('masjid').value;
+      var biryani = document.getElementById('biryani').value;
+
+      if(area === '' || masjid === '') {
+        alert('Fill all fields!');
+        return;
+      }
+
+      var li = document.createElement('li');
+      li.textContent = area + ' - ' + masjid + ' 🍛 ' + biryani;
+      document.getElementById('list').appendChild(li);
+
+      // Clear inputs
+      document.getElementById('area').value = '';
+      document.getElementById('masjid').value = '';
+      document.getElementById('biryani').selectedIndex = 0;
+    }
+  </script>
+
+  <p style="margin-top:40px;font-size:12px;">
+    ⚠️ This is a fun, community-driven project.
+  </p>
+
+</body>
+</html>
