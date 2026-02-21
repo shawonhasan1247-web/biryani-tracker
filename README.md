@@ -1,1 +1,1 @@
-# biryani-tracker
+# MasjidBiryaniWatch
